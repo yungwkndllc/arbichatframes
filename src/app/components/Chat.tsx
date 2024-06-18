@@ -54,7 +54,7 @@ const ChatScroller: React.FC = () => {
       {messages.map((msg, index) => (
         <div key={index} className="mb-2">
           <p className="text-xs text-gray-500">
-            {new Date(msg.timestamp).toLocaleTimeString()} - {msg.sender}
+            {new Date(msg.timestamp * 1000).toLocaleTimeString()} - {msg.sender}
           </p>
           <p className="text-2xl">{msg.message}</p>
         </div>
