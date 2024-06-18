@@ -1,15 +1,12 @@
-import { TransactionTargetResponse } from "frames.js";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { Abi, encodeFunctionData } from "viem";
 import { arbichatABI } from "./contracts/arbichat";
 import { ARBICHAT_ADDRESS } from "@/utils";
-import { ethers } from "ethers";
+import { frames } from "./txdata";
 
-export async function POST(
-  req: NextRequest
-): Promise<NextResponse<TransactionTargetResponse>> {
+const handleRequest = frames(async (ctx) => {
   // Get the query param of message
-  console.log("***", req);
+  console.log("***", ctx.message);
 
   const calldata = encodeFunctionData({
     abi: arbichatABI,
@@ -26,4 +23,7 @@ export async function POST(
       data: calldata,
     },
   });
-}
+});
+
+export const GET = handleRequest;
+export const POST = handleRequest;
