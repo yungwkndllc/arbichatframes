@@ -3,18 +3,21 @@ import { Abi, encodeFunctionData } from "viem";
 import { arbichatABI } from "./contracts/arbichat";
 import { ARBICHAT_ADDRESS } from "@/utils";
 import { frames } from "./txdata";
+import { transaction } from "frames.js/core";
 
 const handleRequest = frames(async (ctx) => {
   // Get the query param of message
-  console.log("***", ctx.message);
+  if (!ctx.message?.inputText) {
+    return NextResponse.error();
+  }
 
   const calldata = encodeFunctionData({
     abi: arbichatABI,
     functionName: "chat",
-    args: [""],
+    args: [ctx.message.inputText],
   });
 
-  return NextResponse.json({
+  return transaction({
     chainId: "eip155:42161",
     method: "eth_sendTransaction",
     params: {
