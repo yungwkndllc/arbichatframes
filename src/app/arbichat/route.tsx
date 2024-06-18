@@ -17,6 +17,9 @@ const handleRequest = frames(async (ctx) => {
         >
           View on arbiscan
         </Button>,
+        <Button action="link" target={`https://arbichatframes.vercel.app/`}>
+          View on arbichat
+        </Button>,
       ],
     };
   }
@@ -28,11 +31,7 @@ const handleRequest = frames(async (ctx) => {
     },
     textInput: "enter your message",
     buttons: [
-      <Button
-        action="tx"
-        target={`${VERCEL_URL}/arbichat/txdata`}
-        post_url="/arbichat"
-      >
+      <Button action="tx" target={`${VERCEL_URL}/arbichat/txdata`} post_url="/">
         chat
       </Button>,
     ],
