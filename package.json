@@ -1,0 +1,39 @@
+{
+  "name": "higherframes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@coinbase/wallet-sdk": "^4.0.3",
+    "@farcaster/core": "^0.14.8",
+    "@frames.js/debugger": "^0.1.14",
+    "@rainbow-me/rainbowkit": "^2.1.2",
+    "@tanstack/react-query": "^5.28.14",
+    "ethers": "^6.11.1",
+    "frames.js": "^0.16.0",
+    "lodash.merge": "^4.6.2",
+    "next": "14.1.4",
+    "node-fetch": "^3.3.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "viem": "2.13.7",
+    "wagmi": "^2.9.10"
+  },
+  "devDependencies": {
+    "@types/lodash.merge": "^4.6.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
